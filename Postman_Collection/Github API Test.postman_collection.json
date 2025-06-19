@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "b130b299-4304-4a5a-81b9-2d8f950afc02",
+		"name": "Github API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45944089"
+	},
+	"item": [
+		{
+			"name": "Search Public Repositories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json"
+					},
+					{
+						"key": "X-GitHub-Api-Version",
+						"value": "2022-11-28"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{GITHUB_TOKEN}}"
+					}
+				],
+				"url": {
+					"raw": "https://api.github.com/search/repositories?q=machine+learning&per_page=5",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"search",
+						"repositories"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "machine+learning"
+						},
+						{
+							"key": "per_page",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Commits of a Repository",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json"
+					},
+					{
+						"key": "X-GitHub-Api-Version",
+						"value": "2022-11-28"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{GITHUB_TOKEN}}"
+					}
+				],
+				"url": {
+					"raw": "https://api.github.com/repos/josephmisiti/awesome-machine-learning/commits?per_page=5",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"josephmisiti",
+						"awesome-machine-learning",
+						"commits"
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repository Content",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json"
+					},
+					{
+						"key": "X-GitHub-Api-Version",
+						"value": "2022-11-28"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{GITHUB_TOKEN}}"
+					}
+				],
+				"url": {
+					"raw": "https://api.github.com/repos/josephmisiti/awesome-machine-learning/contents/README.md",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"josephmisiti",
+						"awesome-machine-learning",
+						"contents",
+						"README.md"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rate Limit",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json"
+					},
+					{
+						"key": "X-GitHub-Api-Version",
+						"value": "2022-11-28"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{GITHUB_TOKEN}}"
+					}
+				],
+				"url": {
+					"raw": "https://api.github.com/rate_limit",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"rate_limit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
